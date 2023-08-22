@@ -45,39 +45,56 @@ const SendCoins = () => {
 
   return (
     <div>
-        <center>
-      <h1>Send Coins</h1>
-      <label>From Address:</label>
-      <input
-        type="text"
-        value={fromAddress}
-        onChange={(e) => setFromAddress(e.target.value)}
-      />
-      <br />
-      <label>To Address:</label>
-      <input
-        type="text"
-        value={toAddress}
-        onChange={(e) => setToAddress(e.target.value)}
-      />
-      <br />
-      <label>Amount (BNB):</label>
-      <input
-        type="text"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-      />
-      <br />
-      <label>Private Key:</label>
-      <input
-        type="text"
-        value={privateKey}
-        onChange={(e) => setPrivateKey(e.target.value)}
-      />
-      <br />
-      <br />
-      <button onClick={handleSendTokens}>Send Tokens</button>
-      </center>
+      <div className="grid grid-cols-3 grid-rows-4 gap-4 mb-4">
+        <div className="text-right">
+          <label className="form-col">From Address</label>
+        </div>
+        <div className="col-span-2">
+          <input
+            type="text"
+            value={fromAddress}
+            onChange={(e) => setFromAddress(e.target.value)}
+            className="shadow border rounded w-full py-1 px-2 text-gray-700 leading-tight outline-2 outline-teal-900"
+          />
+        </div>
+        <div className="text-right" >
+          <label className="form-col">To Address</label>
+        </div>
+        <div className="col-span-2">
+          <input
+            type="text"
+            value={toAddress}
+            onChange={(e) => setToAddress(e.target.value)}
+            className="shadow border rounded w-full py-1 px-2 text-gray-700 leading-tight outline-2 outline-teal-900"
+          />
+        </div>
+        <div className="text-right" >
+          <label className="form-col">Amount (BNB)</label>
+        </div>
+        <div className="col-span-2">
+          <input
+            type="text"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            className="shadow border rounded w-full py-1 px-2 text-gray-700 leading-tight outline-2 outline-teal-900"
+          />
+        </div>
+        <div className="text-right" >
+          <label className="form-col">
+            Private Key
+          </label>
+        </div>
+        <div className="col-span-2">
+          <input
+            type="text"
+            value={privateKey}
+            onChange={(e) => setPrivateKey(e.target.value)}
+            className="shadow border rounded w-full py-1 px-2 text-gray-700 leading-tight outline-2 outline-teal-900"
+          />
+        </div>
+        
+      </div>
+      <button onClick={handleSendTokens} className="px-4 py-2 bg-white/10 rounded-xl hover:bg-white/20 w-full">Send Tokens</button>
     </div>
   );
 };

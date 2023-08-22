@@ -2,7 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+* {
+  font-family: Prompt !important;
+  font-size: 18px;
+  color: white;
+}
+
+@font-face {
+  font-family: Prompt;
+  src: url("/fonts/Prompt-Regular.ttf");
+}
+
+.form-col::after {
+  content: ":";
+}
+
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -108,4 +123,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
