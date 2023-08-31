@@ -37,13 +37,20 @@ const Generate = () => {
 
   return (
     <div>
-      <h1>BSC Wallet Generator</h1>
-      <button onClick={generateWallet}>Generate Wallet</button>
+      <button onClick={generateWallet} className="px-4 py-2 bg-white/10 rounded-xl hover:bg-white/20 w-full">Generate Wallet</button>
+
       {wallet && (
         <div>
-          <h2>Generated Wallet:</h2>
-          <p>Address: {wallet.address}</p>
-          <p>Private Key: {wallet.privateKey}</p>
+          <div className="bg-teal-100 border-l-4 border-teal-500 py-2 pl-4 my-4 rounded-r-xl">
+            <p className="font-bold text-teal-900">Success</p>
+            <p className="text-teal-500">Generated Wallet</p>
+          </div>
+          <div className="grid grid-cols-2 grid-rows-2 gap-4">
+            <div className="text-right">Address:</div>
+            <div >{wallet.address}</div>
+            <div className="col-start-2 row-start-2">{wallet.privateKey}</div>
+            <div className="col-start-1 row-start-2 text-right">Private Key:</div>
+          </div>
         </div>
       )}
     </div>
